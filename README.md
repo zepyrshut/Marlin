@@ -3,41 +3,41 @@
 
 ## Diseñado para Anycubic Kossel Linear Plus, fork de Marlin
 
-Revisado y reescrito por Pedro Pérez [[@zepyrshut](https://github.com/zepyrshut)]
+Revisado y reescrito por Pedro Pérez [@zepyrshut](https://github.com/zepyrshut)
 
 Sin olvidar de los trabajos realizados por:
 
-  * [@correos](https://t.me/correos)
-  * [@yakandu](https://t.me/yakandu)
-  
+* [@correos](https://t.me/correos)
+* [@yakandu](https://t.me/yakandu)
+
 Basado en Configuration.h y Configuration_adv.h realizado por:
 
-  * [@brandstaetter](https://github.com/brandstaetter)
-  * [@bgrbd](https://github.com/grbd)
-  
+* [@brandstaetter](https://github.com/brandstaetter)
+* [@bgrbd](https://github.com/grbd)
+
 Grupo Telegram de Anycubic en español:
-  
-  * [Telegram Anycubic ES](https://t.me/anycubic)
-  
+
+* [Telegram Anycubic ES](https://t.me/anycubic)
+
 ## Características del fork
 
 Configuration.h y Configuration_adv.h diseñado para la impresora Anycubic Kossel. Tanto en la versión Pulley como en Linear, base de 180 mm y 230 mm.
 
 ## Cosas que hacer antes de imprimir
 
- * En Configuration.h, configurar tamaño base, sensor de autonivel y base caliente. Líneas 23-37.
+* En Configuration.h, configurar tamaño base, sensor de autonivel y base caliente. Líneas 23-40.
 
- * Versión 1: Desfase de -19.0 mm
+* Versión 1: Desfase de -19.0 mm
 
-    ![V1](Marlin/example_configurations/delta/Anycubic/Kossel/images/Version1Probe.jpg)
+![V1](Marlin/example_configurations/delta/Anycubic/Kossel/images/Version1Probe.jpg)
 
-  * Versión 2: Desfase de -16.8 mm
+* Versión 2: Desfase de -16.8 mm
 
-    ![V2](Marlin/example_configurations/delta/Anycubic/Kossel/images/Version2Probe.jpg)
+![V2](Marlin/example_configurations/delta/Anycubic/Kossel/images/Version2Probe.jpg)
 
-* Ajustar la altura de la impresora. Valor por defecto: 300. Línea 609.
-* Configurar PID del cartucho calefactor. Líneas 416 a 421.
-* Configurar PID de la base caliente. Líneas 457 a 469.
+* Ajustar la altura de la impresora `#define DELTA_HEIGHT`. Valor por defecto: 300.
+* Configurar PID del cartucho calefactor `#define DEFAULT_Kp`, `#define DEFAULT_Ki`,`#define DEFAULT_Kd`.
+* Configurar PID de la base caliente `#define DEFAULT_bedKp`, `#define DEFAULT_bedKi`,`#define DEFAULT_bedKd`
 
 ## Marlin 1.1
 
@@ -86,44 +86,44 @@ Arduino IDE now has support for folder hierarchies, so Marlin 1.2 will have a [h
 ## Credits
 
 The current Marlin dev team consists of:
- - Roxanne Neufeld [[@Roxy-3D](https://github.com/Roxy-3D)]
- - Scott Lahteine [[@thinkyhead](https://github.com/thinkyhead)]
- - Bob Kuhn [[@Bob-the-Kuhn](https://github.com/Bob-the-Kuhn)]
+- Roxanne Neufeld [[@Roxy-3D](https://github.com/Roxy-3D)]
+- Scott Lahteine [[@thinkyhead](https://github.com/thinkyhead)]
+- Bob Kuhn [[@Bob-the-Kuhn](https://github.com/Bob-the-Kuhn)]
 
 Notable contributors include:
- - Alberto Cotronei [[@MagoKimbra](https://github.com/MagoKimbra)]
- - Andreas Hardtung [[@AnHardt](https://github.com/AnHardt)]
- - Bernhard Kubicek [[@bkubicek](https://github.com/bkubicek)]
- - Bob Cousins [[@bobc](https://github.com/bobc)]
- - Chris Palmer [[@nophead](https://github.com/nophead)]
- - David Braam [[@daid](https://github.com/daid)]
- - Edward Patel [[@epatel](https://github.com/epatel)]
- - Erik van der Zalm [[@ErikZalm](https://github.com/ErikZalm)]
- - Ernesto Martinez [[@emartinez167](https://github.com/emartinez167)]
- - F. Malpartida [[@fmalpartida](https://github.com/fmalpartida)]
- - Jochen Groppe [[@CONSULitAS](https://github.com/CONSULitAS)]
- - João Brazio [[@jbrazio](https://github.com/jbrazio)]
- - Kai [[@Kaibob2](https://github.com/Kaibob2)]
- - Luc Van Daele[[@LVD-AC](https://github.com/LVD-AC)]
- - Nico Tonnhofer [[@Wurstnase](https://github.com/Wurstnase)]
- - Petr Zahradnik [[@clexpert](https://github.com/clexpert)]
- - Thomas Moore [[@tcm0116](https://github.com/tcm0116)]
- - [[@alexxy](https://github.com/alexxy)]
- - [[@android444](https://github.com/android444)]
- - [[@benlye](https://github.com/benlye)]
- - [[@bgort](https://github.com/bgort)]
- - [[@ejtagle](https://github.com/ejtagle)]
- - [[@Grogyan](https://github.com/Grogyan)]
- - [[@marcio-ao](https://github.com/marcio-ao)]
- - [[@maverikou](https://github.com/maverikou)]
- - [[@oysteinkrog](https://github.com/oysteinkrog)]
- - [[@p3p](https://github.com/p3p)]
- - [[@paclema](https://github.com/paclema)]
- - [[@paulusjacobus](https://github.com/paulusjacobus)]
- - [[@psavva](https://github.com/psavva)]
- - [[@Tannoo](https://github.com/Tannoo)]
- - [[@teemuatlut](https://github.com/teemuatlut)]
- - ...and many others
+- Alberto Cotronei [[@MagoKimbra](https://github.com/MagoKimbra)]
+- Andreas Hardtung [[@AnHardt](https://github.com/AnHardt)]
+- Bernhard Kubicek [[@bkubicek](https://github.com/bkubicek)]
+- Bob Cousins [[@bobc](https://github.com/bobc)]
+- Chris Palmer [[@nophead](https://github.com/nophead)]
+- David Braam [[@daid](https://github.com/daid)]
+- Edward Patel [[@epatel](https://github.com/epatel)]
+- Erik van der Zalm [[@ErikZalm](https://github.com/ErikZalm)]
+- Ernesto Martinez [[@emartinez167](https://github.com/emartinez167)]
+- F. Malpartida [[@fmalpartida](https://github.com/fmalpartida)]
+- Jochen Groppe [[@CONSULitAS](https://github.com/CONSULitAS)]
+- João Brazio [[@jbrazio](https://github.com/jbrazio)]
+- Kai [[@Kaibob2](https://github.com/Kaibob2)]
+- Luc Van Daele[[@LVD-AC](https://github.com/LVD-AC)]
+- Nico Tonnhofer [[@Wurstnase](https://github.com/Wurstnase)]
+- Petr Zahradnik [[@clexpert](https://github.com/clexpert)]
+- Thomas Moore [[@tcm0116](https://github.com/tcm0116)]
+- [[@alexxy](https://github.com/alexxy)]
+- [[@android444](https://github.com/android444)]
+- [[@benlye](https://github.com/benlye)]
+- [[@bgort](https://github.com/bgort)]
+- [[@ejtagle](https://github.com/ejtagle)]
+- [[@Grogyan](https://github.com/Grogyan)]
+- [[@marcio-ao](https://github.com/marcio-ao)]
+- [[@maverikou](https://github.com/maverikou)]
+- [[@oysteinkrog](https://github.com/oysteinkrog)]
+- [[@p3p](https://github.com/p3p)]
+- [[@paclema](https://github.com/paclema)]
+- [[@paulusjacobus](https://github.com/paulusjacobus)]
+- [[@psavva](https://github.com/psavva)]
+- [[@Tannoo](https://github.com/Tannoo)]
+- [[@teemuatlut](https://github.com/teemuatlut)]
+- ...and many others
 
 ## License
 
