@@ -9,6 +9,16 @@
 
 ================================================================================
 
+  Marlin Firmware 1.1.9 Anycubic Kossel Plus.
+  
+  Basado en el trabajo de @brandstaetter y @grbd.
+  
+  Modificado por @zepyr.
+  
+  Contacto: https://t.me/zepyr.
+  
+================================================================================
+
 Greetings! Thank you for choosing Marlin as your 3D printer firmware.
 
 To configure Marlin you must edit Configuration.h and Configuration_adv.h

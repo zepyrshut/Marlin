@@ -1,6 +1,44 @@
 # Marlin 3D Printer Firmware
 <img align="right" src="../../raw/1.1.x/buildroot/share/pixmaps/logo/marlin-250.png" />
 
+## Diseñado para Anycubic Kossel Linear Plus, fork de Marlin
+
+Revisado y reescrito por Pedro Pérez [[@zepyrshut](https://github.com/zepyrshut)]
+
+Sin olvidar de los trabajos realizados por:
+
+  [[@correos](https://t.me/correos)]
+  [[@yakandu](https://t.me/yakandu)]  
+  
+Basado en Configuration.h y Configuration_adv.h realizado por:
+
+  [[@brandstaetter](https://github.com/brandstaetter)]
+  [[@bgrbd](https://github.com/grbd)]  
+  
+Grupo Telegram de Anycubic en español:
+  
+  [[Telegram Anycubic ES](https://t.me/anycubic)]
+  
+## Características del fork
+
+Configuration.h y Configuration_adv.h diseñado para la impresora Anycubic Kossel. Tanto en la versión Pulley como en Linear, base de 180 mm y 230 mm.
+
+## Cosas que hacer antes de imprimir
+
+En Configuration.h, configurar tamaño base, sensor de autonivel y base caliente. Líneas 23-37.
+
+ * Versión 1: Desfase de -19.0 mm
+
+    ![V1](Marlin/example_configurations/delta/Anycubic/Kossel/images/Version1Probe.jpg)
+
+  * Versión 2: Desfase de -16.8 mm
+
+    ![V2](Marlin/example_configurations/delta/Anycubic/Kossel/images/Version2Probe.jpg)
+
+Ajustar la altura de la impresora. Valor por defecto: 300. Línea 609.
+Configurar PID del cartucho calefactor. Líneas 416 a 421.
+Configurar PID de la base caliente. Líneas 457 a 469.
+
 ## Marlin 1.1
 
 Marlin 1.1 represents an evolutionary leap over Marlin 1.0.2. It is the result of over two years of effort by several volunteers around the world who have paid meticulous and sometimes obsessive attention to every detail. For this release we focused on code quality, performance, stability, and overall user experience. Several new features have also been added, many of which require no extra hardware.
