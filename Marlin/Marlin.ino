@@ -13,7 +13,7 @@
   
   Basado en el trabajo de @brandstaetter y @grbd.
   
-  Modificado por @zepyr.
+  Modificado por @zepyrshut.
   
   Contacto: https://t.me/zepyr.
   

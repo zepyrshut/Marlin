@@ -39,6 +39,11 @@
 
 #define ANYCUBIC_KOSSEL_ENABLE_BED 2
 
+//Temperaturas altas +265 grados, descomentar. 
+//Experimental, tenga mucho cuiudado, podrías provocar quemaduras e incendios.
+
+//#define HIGH_TEMP
+
 /**
  * Configuration.h
  *
@@ -97,7 +102,7 @@
 #define STRING_CONFIG_H_AUTHOR "Originales: @brandstaetter, @grbd. Modificaciones: @zepyrshut" // Who made the changes.
 #define SHOW_BOOTSCREEN
 #define STRING_SPLASH_LINE1 SHORT_BUILD_VERSION // Saldrá en la primera línea durante el encendido.
-#define STRING_SPLASH_LINE2 "Bienvenidos a ANYCUBIC"         // Saldrá en la segunda línea durante el encendido.
+#define STRING_SPLASH_LINE2 "v0.5 Beta"         // Saldrá en la segunda línea durante el encendido.
 
 /**
  * *** VENDORS PLEASE READ ***
@@ -369,12 +374,22 @@
 // When temperature exceeds max temp, your heater will be switched off.
 // This feature exists to protect your hotend from overheating accidentally, but *NOT* from thermistor short/failure!
 // You should use MINTEMP for thermistor short/failure protection.
-#define HEATER_0_MAXTEMP 280
-#define HEATER_1_MAXTEMP 280
-#define HEATER_2_MAXTEMP 280
-#define HEATER_3_MAXTEMP 280
-#define HEATER_4_MAXTEMP 280
-#define BED_MAXTEMP 120
+
+#if ENABLED(HIGH_TEMP)
+  #define HEATER_0_MAXTEMP 280
+  #define HEATER_1_MAXTEMP 280
+  #define HEATER_2_MAXTEMP 280
+  #define HEATER_3_MAXTEMP 280
+  #define HEATER_4_MAXTEMP 280
+  #define BED_MAXTEMP 120
+#else
+  #define HEATER_0_MAXTEMP 250
+  #define HEATER_1_MAXTEMP 250
+  #define HEATER_2_MAXTEMP 250
+  #define HEATER_3_MAXTEMP 250
+  #define HEATER_4_MAXTEMP 250
+  #define BED_MAXTEMP 120
+#endif
 
 //===========================================================================
 //============================= PID Settings ================================
@@ -413,13 +428,20 @@
   //#define DEFAULT_Ki 2.25
   //#define DEFAULT_Kd 440
 
-  // Anycubic Kossel - Ejecutar 'M106 S255' & 'M303 E0 C10 S200'
-  // M106 ajusta la velocidad del ventilador 0-255
-  // M303 inicia el afinamiento de PID. Extrusor 0, 10 veces a 200 grados
-  #define DEFAULT_Kp 22.36
-  #define DEFAULT_Ki 1.63
-  #define DEFAULT_Kd 76.48
+  #if ENABLED(HIGH_TEMP)
+    // Anycubic Kossel - Ejecutar 'M303 E0 C10 S250'
+    // M303 inicia el afinamiento de PID. Extrusor 0, 10 veces a 230 grados
+    #define DEFAULT_Kp 26.57
+    #define DEFAULT_Ki 2.40
+    #define DEFAULT_Kd 73.45
+  #else
+    // Anycubic Kossel - Ejecutar 'M303 E0 C10 S200'
+    // M303 inicia el afinamiento de PID. Extrusor 0, 10 veces a 230 grados
+    #define DEFAULT_Kp 28.18
+    #define DEFAULT_Ki 2.75
+    #define DEFAULT_Kd 72.12
 
+  #endif
 #endif // PIDTEMP
 
 //===========================================================================
@@ -926,7 +948,7 @@
 #elif ANYCUBIC_PROBE_VERSION == 2
   #define Z_PROBE_OFFSET_FROM_EXTRUDER -16.0 // Z offset: -below +above  [the nozzle]
 #else
-  #define Z_PROBE_OFFSET_FROM_EXTRUDER -0.1 // Z offset: -below +above  [the nozzle]
+  #define Z_PROBE_OFFSET_FROM_EXTRUDER -0.2 // Z offset: -below +above  [the nozzle]
 #endif
 
 // Certain types of probes need to stay away from edges

@@ -20,6 +20,11 @@
  *
  */
 
+//Temperaturas altas: +265 grados, descomentar. 
+//Experimental, tenga mucho cuiudado, podrías provocar quemaduras e incendios.
+
+//#define HIGH_TEMP
+
 /**
  * Configuration_adv.h
  *
@@ -74,24 +79,49 @@
  * If you get false positives for "Thermal Runaway", increase
  * THERMAL_PROTECTION_HYSTERESIS and/or THERMAL_PROTECTION_PERIOD
  */
-#if ENABLED(THERMAL_PROTECTION_HOTENDS)
-  #define THERMAL_PROTECTION_PERIOD 40        // Seconds
-  #define THERMAL_PROTECTION_HYSTERESIS 4     // Degrees Celsius
 
-  /**
-   * Whenever an M104, M109, or M303 increases the target temperature, the
-   * firmware will wait for the WATCH_TEMP_PERIOD to expire. If the temperature
-   * hasn't increased by WATCH_TEMP_INCREASE degrees, the machine is halted and
-   * requires a hard reset. This test restarts with any M104/M109/M303, but only
-   * if the current temperature is far enough below the target for a reliable
-   * test.
-   *
-   * If you get false positives for "Heating failed", increase WATCH_TEMP_PERIOD
-   * and/or decrease WATCH_TEMP_INCREASE. WATCH_TEMP_INCREASE should not be set
-   * below 2.
-   */
-  #define WATCH_TEMP_PERIOD 20                // Seconds
-  #define WATCH_TEMP_INCREASE 2               // Degrees Celsius
+#if ENABLED(HIGH_TEMP)
+
+  #if ENABLED(THERMAL_PROTECTION_HOTENDS)
+    #define THERMAL_PROTECTION_PERIOD 70        // Seconds
+    #define THERMAL_PROTECTION_HYSTERESIS 8     // Degrees Celsius
+
+    /**
+     * Whenever an M104, M109, or M303 increases the target temperature, the
+     * firmware will wait for the WATCH_TEMP_PERIOD to expire. If the temperature
+     * hasn't increased by WATCH_TEMP_INCREASE degrees, the machine is halted and
+     * requires a hard reset. This test restarts with any M104/M109/M303, but only
+     * if the current temperature is far enough below the target for a reliable
+     * test.
+     *
+     * If you get false positives for "Heating failed", increase WATCH_TEMP_PERIOD
+     * and/or decrease WATCH_TEMP_INCREASE. WATCH_TEMP_INCREASE should not be set
+     * below 2.
+     */
+
+    #define WATCH_TEMP_PERIOD 50                // Seconds
+    #define WATCH_TEMP_INCREASE 2               // Degrees Celsius
+  #endif
+#else
+
+  #if ENABLED(THERMAL_PROTECTION_HOTENDS)
+    #define THERMAL_PROTECTION_PERIOD 40        // Seconds
+    #define THERMAL_PROTECTION_HYSTERESIS 4     // Degrees Celsius
+    /**
+     * Whenever an M104, M109, or M303 increases the target temperature, the
+     * firmware will wait for the WATCH_TEMP_PERIOD to expire. If the temperature
+     * hasn't increased by WATCH_TEMP_INCREASE degrees, the machine is halted and
+     * requires a hard reset. This test restarts with any M104/M109/M303, but only
+     * if the current temperature is far enough below the target for a reliable
+     * test.
+     *
+     * If you get false positives for "Heating failed", increase WATCH_TEMP_PERIOD
+     * and/or decrease WATCH_TEMP_INCREASE. WATCH_TEMP_INCREASE should not be set
+     * below 2.
+     */
+    #define WATCH_TEMP_PERIOD 20                // Seconds antiguo
+    #define WATCH_TEMP_INCREASE 2               // Degrees Celsius
+  #endif
 #endif
 
 /**
@@ -197,6 +227,7 @@
  * and turn off after a set period after all steppers are turned off.
  */
 //#define USE_CONTROLLER_FAN
+
 #if ENABLED(USE_CONTROLLER_FAN)
   //#define CONTROLLER_FAN_PIN -1        // Set a custom pin for the controller fan
   #define CONTROLLERFAN_SECS 60          // Duration in seconds for the fan to run after all motors are disabled
@@ -244,7 +275,11 @@
 #define E4_AUTO_FAN_PIN -1
 #define CHAMBER_AUTO_FAN_PIN -1
 #define EXTRUDER_AUTO_FAN_TEMPERATURE 50
-#define EXTRUDER_AUTO_FAN_SPEED   255  // == full speed
+#if ENABLED(HIGH_TEMP)
+  #define EXTRUDER_AUTO_FAN_SPEED 89
+#else
+  #define EXTRUDER_AUTO_FAN_SPEED 204 // rango 0 - 255
+#endif
 
 /**
  * Part-Cooling Fan Multiplexer

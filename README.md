@@ -3,7 +3,9 @@
 
 ## Diseñado para Anycubic Kossel Linear Plus, fork de Marlin
 
-Revisado y reescrito por Pedro Pérez [@zepyrshut](https://github.com/zepyrshut)
+Revisado y reescrito por Pedro Pérez.
+
+* [@zepyrshut](https://github.com/zepyrshut)
 
 Sin olvidar de los trabajos realizados por:
 
@@ -19,13 +21,19 @@ Grupo Telegram de Anycubic en español:
 
 * [Telegram Anycubic ES](https://t.me/anycubic)
 
-## Características del fork
+## Características
 
-Configuration.h y Configuration_adv.h diseñado para la impresora Anycubic Kossel. Tanto en la versión Pulley como en Linear, base de 180 mm y 230 mm.
+* Configuration.h y Configuration_adv.h diseñado para la impresora Anycubic Kossel. Tanto en la versión Pulley como en Linear, base de 180 mm y 230 mm.
+* Diseñado para el conjunto fusor *E3D V6*. Podría experimentar problemas con los clones a temperaturas muy altas, se recomienda no activar la opción de temperaturas altas (>250).
+* Temperatura máxima de 280 grados. Ajustar el máximo en `#define HEATER_0_MAXTEMP`, `#define HEATER_1_MAXTEMP`, `#define HEATER_2_MAXTEMP`, `#define HEATER_3_MAXTEMP`, `#define HEATER_4_MAXTEMP`.
+* Se han hecho algunos ajustes en `#define WATCH_TEMP_PERIOD`, `#define THERMAL_PROTECTION_HYSTERESIS` y `#define WATCH_TEMP_INCREASE`.
+* Ajustes PID E3D V6 para rangos de 175 a 245 y de 246 a 270.
 
 ## Cosas que hacer antes de imprimir
 
-* En Configuration.h, configurar tamaño base `#define ANCYUBIC_KOSSEL_PLUS`, sensor de autonivel `#define ANYCUBIC_PROBE_VERSION` y base caliente `#define ANYCUBIC_KOSSEL_ENABLE_BED`
+* Guía de uso y más información en [Zepyr's Hut](https://zepyrshut.com), se recomienda leer la guía si no tienes muy claro lo que hay que hacer hacer. Se recomienda leer para todo el mundo.
+
+* En Configuration.h, configurar tamaño base `#define ANCYUBIC_KOSSEL_PLUS`, sensor de autonivel `#define ANYCUBIC_PROBE_VERSION` y base caliente `#define ANYCUBIC_KOSSEL_ENABLE_BED`.
 
 * Versión 1: Desfase de -19.0 mm
 
@@ -35,9 +43,17 @@ Configuration.h y Configuration_adv.h diseñado para la impresora Anycubic Kosse
 
 ![V2](Marlin/example_configurations/delta/Anycubic/Kossel/images/Version2Probe.jpg)
 
-* Ajustar la altura de la impresora `#define DELTA_HEIGHT`. Valor por defecto: 300.
+* Versión 3: Desfase de -0.2 mm, sensor de espuma.
+
+* Ajustar la altura de la impresora `#define DELTA_HEIGHT`. Valor aproximado, no hace falta que sea exacto. Es para evitar que la tobera embista contra la base.
+* Calibrar con `G33` y `G29`.
 * Configurar PID del cartucho calefactor `#define DEFAULT_Kp`, `#define DEFAULT_Ki`,`#define DEFAULT_Kd`.
 * Configurar PID de la base caliente `#define DEFAULT_bedKp`, `#define DEFAULT_bedKi`,`#define DEFAULT_bedKd`.
+* Ajustar los pasos de extrusor `#define DEFAULT_AXIS_STEPS_PER_UNIT`, donde el valor 96 debe ser sustituido por el nuevo valor ajustado.
+* Calibración de ancho de pared. Ajuste para el fileteador.
+* Calibración dimensional `#define DELTA_DIAGONAL_ROD` y `#define DELTA_DIAGONAL_ROD_TRIM_TOWER`.
+
+* Experimental: descomentar `#if ENABLED(HIGH_TEMP)` si se desea lograr temperaturas por encima de los 245 grados.
 
 ## Marlin 1.1
 
