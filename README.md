@@ -25,7 +25,7 @@ Configuration.h y Configuration_adv.h diseñado para la impresora Anycubic Kosse
 
 ## Cosas que hacer antes de imprimir
 
-* En Configuration.h, configurar tamaño base, sensor de autonivel y base caliente. Líneas 23-40.
+* En Configuration.h, configurar tamaño base `#define ANCYUBIC_KOSSEL_PLUS`, sensor de autonivel `#define ANYCUBIC_PROBE_VERSION` y base caliente `#define ANYCUBIC_KOSSEL_ENABLE_BED`
 
 * Versión 1: Desfase de -19.0 mm
 
@@ -37,7 +37,7 @@ Configuration.h y Configuration_adv.h diseñado para la impresora Anycubic Kosse
 
 * Ajustar la altura de la impresora `#define DELTA_HEIGHT`. Valor por defecto: 300.
 * Configurar PID del cartucho calefactor `#define DEFAULT_Kp`, `#define DEFAULT_Ki`,`#define DEFAULT_Kd`.
-* Configurar PID de la base caliente `#define DEFAULT_bedKp`, `#define DEFAULT_bedKi`,`#define DEFAULT_bedKd`
+* Configurar PID de la base caliente `#define DEFAULT_bedKp`, `#define DEFAULT_bedKi`,`#define DEFAULT_bedKd`.
 
 ## Marlin 1.1
 
