@@ -7,17 +7,17 @@ Revisado y reescrito por Pedro Pérez [[@zepyrshut](https://github.com/zepyrshut
 
 Sin olvidar de los trabajos realizados por:
 
-  [[@correos](https://t.me/correos)]
-  [[@yakandu](https://t.me/yakandu)]  
+  * [@correos](https://t.me/correos)
+  * [@yakandu](https://t.me/yakandu)
   
 Basado en Configuration.h y Configuration_adv.h realizado por:
 
-  [[@brandstaetter](https://github.com/brandstaetter)]
-  [[@bgrbd](https://github.com/grbd)]  
+  * [@brandstaetter](https://github.com/brandstaetter)
+  * [@bgrbd](https://github.com/grbd)
   
 Grupo Telegram de Anycubic en español:
   
-  [[Telegram Anycubic ES](https://t.me/anycubic)]
+  * [Telegram Anycubic ES](https://t.me/anycubic)
   
 ## Características del fork
 
@@ -25,7 +25,7 @@ Configuration.h y Configuration_adv.h diseñado para la impresora Anycubic Kosse
 
 ## Cosas que hacer antes de imprimir
 
-En Configuration.h, configurar tamaño base, sensor de autonivel y base caliente. Líneas 23-37.
+ * En Configuration.h, configurar tamaño base, sensor de autonivel y base caliente. Líneas 23-37.
 
  * Versión 1: Desfase de -19.0 mm
 
@@ -35,9 +35,9 @@ En Configuration.h, configurar tamaño base, sensor de autonivel y base caliente
 
     ![V2](Marlin/example_configurations/delta/Anycubic/Kossel/images/Version2Probe.jpg)
 
-Ajustar la altura de la impresora. Valor por defecto: 300. Línea 609.
-Configurar PID del cartucho calefactor. Líneas 416 a 421.
-Configurar PID de la base caliente. Líneas 457 a 469.
+* Ajustar la altura de la impresora. Valor por defecto: 300. Línea 609.
+* Configurar PID del cartucho calefactor. Líneas 416 a 421.
+* Configurar PID de la base caliente. Líneas 457 a 469.
 
 ## Marlin 1.1
 
