@@ -39,7 +39,7 @@
 
 #define ANYCUBIC_KOSSEL_ENABLE_BED 2
 
-//Temperaturas altas +265 grados, descomentar. 
+//Temperaturas altas >265 grados, descomentar. 
 //Experimental, tenga mucho cuiudado, podrías provocar quemaduras e incendios.
 
 //#define HIGH_TEMP
@@ -102,7 +102,7 @@
 #define STRING_CONFIG_H_AUTHOR "Originales: @brandstaetter, @grbd. Modificaciones: @zepyrshut" // Who made the changes.
 #define SHOW_BOOTSCREEN
 #define STRING_SPLASH_LINE1 SHORT_BUILD_VERSION // Saldrá en la primera línea durante el encendido.
-#define STRING_SPLASH_LINE2 "v0.5 Beta"         // Saldrá en la segunda línea durante el encendido.
+#define STRING_SPLASH_LINE2 "v0.6 Beta"         // Saldrá en la segunda línea durante el encendido.
 
 /**
  * *** VENDORS PLEASE READ ***
@@ -154,7 +154,7 @@
 
 // Optional custom name for your RepStrap or other custom machine
 // Displayed in the LCD "Ready" message
-#define CUSTOM_MACHINE_NAME "ANYCUBIC Kossel Plus"
+#define CUSTOM_MACHINE_NAME "ANYCUBIC Kossel"
 
 // Define this to set a unique identifier for this printer, (Used by some programs to differentiate between machines)
 // You can use an online service to generate a random UUID. (eg http://www.uuidgenerator.net/version4)
@@ -485,9 +485,9 @@
     #define DEFAULT_bedKd 482.59
   #elif ANYCUBIC_KOSSEL_ENABLE_BED == 2
   // Para la Ultrabase:
-    #define DEFAULT_bedKp 374.03
-    #define DEFAULT_bedKi 72.47
-    #define DEFAULT_bedKd 482.59
+    #define DEFAULT_bedKp 394.75
+    #define DEFAULT_bedKi 58.76
+    #define DEFAULT_bedKd 662.93
   #endif
 
   //#define PID_BED_DEBUG // Sends debug data to the serial port.
