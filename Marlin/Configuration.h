@@ -102,7 +102,7 @@
 #define STRING_CONFIG_H_AUTHOR "Originales: @brandstaetter, @grbd. Modificaciones: @zepyrshut" // Who made the changes.
 #define SHOW_BOOTSCREEN
 #define STRING_SPLASH_LINE1 SHORT_BUILD_VERSION // Saldrá en la primera línea durante el encendido.
-#define STRING_SPLASH_LINE2 "v0.6 Beta"         // Saldrá en la segunda línea durante el encendido.
+#define STRING_SPLASH_LINE2 "v0.7 Beta"         // Saldrá en la segunda línea durante el encendido.
 
 /**
  * *** VENDORS PLEASE READ ***
@@ -376,19 +376,19 @@
 // You should use MINTEMP for thermistor short/failure protection.
 
 #if ENABLED(HIGH_TEMP)
-  #define HEATER_0_MAXTEMP 280
-  #define HEATER_1_MAXTEMP 280
-  #define HEATER_2_MAXTEMP 280
-  #define HEATER_3_MAXTEMP 280
-  #define HEATER_4_MAXTEMP 280
+  #define HEATER_0_MAXTEMP 300
+  #define HEATER_1_MAXTEMP 300
+  #define HEATER_2_MAXTEMP 300
+  #define HEATER_3_MAXTEMP 300
+  #define HEATER_4_MAXTEMP 300
   #define BED_MAXTEMP 120
 #else
-  #define HEATER_0_MAXTEMP 250
-  #define HEATER_1_MAXTEMP 250
-  #define HEATER_2_MAXTEMP 250
-  #define HEATER_3_MAXTEMP 250
-  #define HEATER_4_MAXTEMP 250
-  #define BED_MAXTEMP 120
+  #define HEATER_0_MAXTEMP 260
+  #define HEATER_1_MAXTEMP 260
+  #define HEATER_2_MAXTEMP 260
+  #define HEATER_3_MAXTEMP 260
+  #define HEATER_4_MAXTEMP 260
+  #define BED_MAXTEMP 100
 #endif
 
 //===========================================================================
@@ -429,17 +429,17 @@
   //#define DEFAULT_Kd 440
 
   #if ENABLED(HIGH_TEMP)
-    // Anycubic Kossel - Ejecutar 'M303 E0 C10 S250'
-    // M303 inicia el afinamiento de PID. Extrusor 0, 10 veces a 230 grados
+    // Anycubic Kossel - Ejecutar 'M303 E0 C10 S260'
+    // M303 inicia el afinamiento de PID. Extrusor 0, 10 veces a 260 grados
     #define DEFAULT_Kp 26.57
     #define DEFAULT_Ki 2.40
     #define DEFAULT_Kd 73.45
   #else
-    // Anycubic Kossel - Ejecutar 'M303 E0 C10 S200'
+    // Anycubic Kossel - Ejecutar 'M303 E0 C10 S210'
     // M303 inicia el afinamiento de PID. Extrusor 0, 10 veces a 230 grados
-    #define DEFAULT_Kp 28.18
-    #define DEFAULT_Ki 2.75
-    #define DEFAULT_Kd 72.12
+    #define DEFAULT_Kp 27.64
+    #define DEFAULT_Ki 2.66
+    #define DEFAULT_Kd 71.90
 
   #endif
 #endif // PIDTEMP
@@ -487,8 +487,8 @@
   // Para la Ultrabase:
     #define DEFAULT_bedKp 394.75
     #define DEFAULT_bedKi 58.76
-    #define DEFAULT_bedKd 662.93
-  #endif
+    #define DEFAULT_bedKd 662.93  
+#endif
 
   //#define PID_BED_DEBUG // Sends debug data to the serial port.
 

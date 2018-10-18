@@ -83,8 +83,8 @@
 #if ENABLED(HIGH_TEMP)
 
   #if ENABLED(THERMAL_PROTECTION_HOTENDS)
-    #define THERMAL_PROTECTION_PERIOD 70        // Seconds
-    #define THERMAL_PROTECTION_HYSTERESIS 8     // Degrees Celsius
+    #define THERMAL_PROTECTION_PERIOD 80        // Seconds
+    #define THERMAL_PROTECTION_HYSTERESIS 10     // Degrees Celsius
 
     /**
      * Whenever an M104, M109, or M303 increases the target temperature, the
@@ -105,8 +105,8 @@
 #else
 
   #if ENABLED(THERMAL_PROTECTION_HOTENDS)
-    #define THERMAL_PROTECTION_PERIOD 40        // Seconds
-    #define THERMAL_PROTECTION_HYSTERESIS 4     // Degrees Celsius
+    #define THERMAL_PROTECTION_PERIOD 60        // Seconds
+    #define THERMAL_PROTECTION_HYSTERESIS 8     // Degrees Celsius
     /**
      * Whenever an M104, M109, or M303 increases the target temperature, the
      * firmware will wait for the WATCH_TEMP_PERIOD to expire. If the temperature
@@ -278,7 +278,7 @@
 #if ENABLED(HIGH_TEMP)
   #define EXTRUDER_AUTO_FAN_SPEED 89
 #else
-  #define EXTRUDER_AUTO_FAN_SPEED 204 // rango 0 - 255
+  #define EXTRUDER_AUTO_FAN_SPEED 255 // rango 0 - 255
 #endif
 
 /**

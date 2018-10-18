@@ -456,7 +456,7 @@
     // TODO get real PID values for Ultrabase Bed
     #define DEFAULT_bedKp 374.03
     #define DEFAULT_bedKi 72.47
-    #define DEFAULT_bedKd 482.59
+    #define DEFAULT_bedKd 482.59 //  25/09/2018
   #endif
 
   //#define PID_BED_DEBUG // Sends debug data to the serial port.
